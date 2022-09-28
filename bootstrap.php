@@ -14,5 +14,13 @@ require __DIR__.'/autoload.php';
 
 // var_dump($person);
 
-var_dump((new Postgres)->connect());
-var_dump((new MySql)->connect());
+// var_dump((new Postgres)->connect());
+// var_dump((new MySql)->connect());
+
+try {
+    (new \Carlos\DB\ORM)->select(false);
+} catch(Carlos\MyException $e) {
+    echo $e->getMessage();
+} catch(\Exception $e) {
+    echo $e->getMessage();
+}
