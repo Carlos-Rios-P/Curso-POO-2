@@ -27,8 +27,8 @@ require __DIR__.'/autoload.php';
 
 $person = new \Carlos\People\Person;
 
-$person->setName('Carlos');
-$person->setAge(23);
-$person->setWeight(50.2);
+$person->name = 'carlos';
+$person->age = 23;
+$person->weight =  80.2;
 
 echo $person;

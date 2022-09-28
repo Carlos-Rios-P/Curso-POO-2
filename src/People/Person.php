@@ -4,7 +4,9 @@ namespace Carlos\People;
 
 class Person
 {
-    private $data = [];
+    private $name;
+    private $age;
+    private $weight;
 
     public function __construct()
     {
@@ -13,21 +15,46 @@ class Person
 
     public function setName(string $name)
     {
-        $this->data[] = $name;
+        $this->name = $name;
     }
-
+    
+    public function getName(){
+        return explode('r', $this->name);
+    }
+    
     public function setAge(int $age)
     {
-        $this->data[] = $age;
+        $this->age = $age;
     }
-
+    
     public function setWeight(float $weight)
     {
-        $this->data[] = $weight;
+        $this->weight = $weight;
+    }
+    
+
+    public function __set($name, $value)
+    {
+        $method = 'set' . ucfirst($name);
+        if(method_exists($this, $method)){
+            $this->$method($value);
+        } else {
+            $this->$name = $value;
+        }
+    }
+
+    public function __get($name)
+    {
+        $method = 'get' . ucfirst($name);
+        if(method_exists($this, $method)){
+            return $this->$method();
+        }
+
+        return $this->$name;
     }
 
     public function __toString() :string
     {
-        return implode(', ', $this->data) . '.' .PHP_EOL;
+        return $this->name . ', ' . $this->age . ', ' . $this->weight . PHP_EOL;
     }
 }
