@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/src/People/Person.php';
+require __DIR__.'/autoload.php';
 
 $person = new \Carlos\People\Person;
 
