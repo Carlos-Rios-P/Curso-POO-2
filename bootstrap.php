@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__.'/src/Person.php';
+require __DIR__.'/src/People/Person.php';
 
-$person = new Person;
+$person = new \Carlos\People\Person;
 
 $person->setName('Carlos');
 $person->setAge(23);

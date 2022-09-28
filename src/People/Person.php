@@ -1,5 +1,7 @@
 <?php
 
+namespace Carlos\People;
+
 class Person
 {
     private $data = [];
