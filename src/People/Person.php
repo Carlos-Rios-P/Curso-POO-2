@@ -6,6 +6,11 @@ class Person
 {
     private $data = [];
 
+    public function __construct()
+    {
+        echo 'classe instaciada'.PHP_EOL;
+    }
+
     public function setName(string $name)
     {
         $this->data[] = $name;
@@ -19,5 +24,10 @@ class Person
     public function setWeight(float $weight)
     {
         $this->data[] = $weight;
+    }
+
+    public function __toString() :string
+    {
+        return implode(', ', $this->data) . '.' .PHP_EOL;
     }
 }

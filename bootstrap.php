@@ -17,10 +17,18 @@ require __DIR__.'/autoload.php';
 // var_dump((new Postgres)->connect());
 // var_dump((new MySql)->connect());
 
-try {
-    (new \Carlos\DB\ORM)->select(false);
-} catch(Carlos\MyException $e) {
-    echo $e->getMessage();
-} catch(\Exception $e) {
-    echo $e->getMessage();
-}
+// try {
+//     (new \Carlos\DB\ORM)->select(false);
+// } catch(Carlos\MyException $e) {
+//     echo $e->getMessage();
+// } catch(\Exception $e) {
+//     echo $e->getMessage();
+// }
+
+$person = new \Carlos\People\Person;
+
+$person->setName('Carlos');
+$person->setAge(23);
+$person->setWeight(50.2);
+
+echo $person;
